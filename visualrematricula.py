@@ -15,7 +15,7 @@ with col1:
     st.title("📞 Dashboard de Llamadas de Cartera")
 
 with col2:
-    image = Image.open("images/CUN-1200X1200.png")  # o solo "CUN-1200X1200.png" si está en la raíz
+    image = "CUN-1200X1200.png"  # o solo "CUN-1200X1200.png" si está en la raíz
     st.image(image, width=200) 
 #st.title("📞 Dashboard de Llamadas de Cartera")
 
