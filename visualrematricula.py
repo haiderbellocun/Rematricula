@@ -17,16 +17,16 @@ with col1:
 with col2:
     image = "CUN-1200X1200.png"  # o solo "CUN-1200X1200.png" si está en la raíz
     st.image(image, width=200) 
-#st.title("📞 Dashboard de Llamadas de Cartera")
+#st.title("📞 Dashboard de Llamadas de Rematricula")
 
 # ==========================
 # Cargar datos desde archivos CSV
 # ==========================
-df_puntaje = pd.read_csv("data/puntaje_promedio_por_asesor.csv")
-df_detalle = pd.read_csv("data/promedio_conteo_por_categoria.csv")
-df_sentimiento = pd.read_csv("data/sentimiento_general.csv")
-df_polaridad_asesor = pd.read_csv("data/polaridad_por_asesor.csv")
-df_resultados = pd.read_csv("data/resultados_por_asesor.csv")
+df_puntaje = pd.read_csv("data/puntaje_promedio_por_asesor_rematricula.csv")
+df_detalle = pd.read_csv("data/promedio_conteo_por_categoria_rematricula.csv")
+df_sentimiento = pd.read_csv("data/sentimiento_general_rematricula.csv")
+df_polaridad_asesor = pd.read_csv("data/polaridad_por_asesor_rematricula.csv")
+df_resultados = pd.read_csv("data/resultados_por_asesor_rematricula.csv")
 
 
 # ==========================
