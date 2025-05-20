@@ -12,7 +12,7 @@ st.set_page_config(page_title="Dashboard de Llamadas de Cartera", layout="wide")
 col1, col2 = st.columns([4, 1])  # más espacio para el título
 
 with col1:
-    st.title("📞 Dashboard de Llamadas de Cartera")
+    st.title("📞 Dashboard de Llamadas de Rematricula")
 
 with col2:
     image = "CUN-1200X1200.png"  # o solo "CUN-1200X1200.png" si está en la raíz
