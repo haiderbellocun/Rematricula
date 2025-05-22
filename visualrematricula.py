@@ -203,6 +203,46 @@ fig5.update_layout(
 st.plotly_chart(fig5, use_container_width=True)
 
 
+#grafico 2
+
+pivot = df_detalle.pivot(index="asesor", columns="categoria", values="promedio_conteo")
+
+# Crear el heatmap
+fig = go.Figure(data=go.Heatmap(
+    z=pivot.values,
+    x=pivot.columns,
+    y=pivot.index,
+    colorscale='Greens',
+    showscale=True,
+    colorbar=dict(title="Conteo Promedio"),
+    zmin=0, zmax=2,
+    hovertemplate='Categoría: %{x}<br>Asesor: %{y}<br>Conteo: %{z}<extra></extra>'
+))
+
+# Agregar líneas verticales rojas entre las categorías
+num_categorias = len(pivot.columns)
+shapes = [
+    dict(
+        type="line",
+        x0=i-0.5, x1=i-0.5,
+        y0=-0.5, y1=len(pivot.index)-0.5,
+          line=dict(color="white", width=2)  # <--- Cambiado a gris
+    )
+    for i in range(1, num_categorias)
+]
+
+fig.update_layout(
+    title="🔍 Promedio de Conteo por Categoría y Asesor",
+    xaxis_title="Categoría",
+    yaxis_title="Asesor",
+    font=dict(family="Arial", size=12),
+    plot_bgcolor='white',
+    shapes=shapes  # <--- Aquí se agregan las líneas
+)
+
+fig.show()
+
+
 # 5. Análisis detallado por asesor
 st.subheader("🗂️ Análisis Detallado por Asesor")
 requisitos = {"saludo":(1,0.05),"indagacion":(4,0.20),"programas":(3,0.15),"argumentacion":(20,0.30),"objecion":(4,0.20),"cierre":(3,0.20)}
